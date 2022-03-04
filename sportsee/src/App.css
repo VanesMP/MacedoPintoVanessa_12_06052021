@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 .App {
     text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.containerSession {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 5%;
+}
+
+.charts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
