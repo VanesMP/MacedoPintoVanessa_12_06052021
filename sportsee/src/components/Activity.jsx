@@ -54,7 +54,7 @@ const data =[
       xLineDays.push(el.day.substr(-1))
     })
     
-    console.log(xLineDays)
+    //console.log(xLineDays)
 
     //customiser le tooltip
     const CustomTooltip = ({data}) => {

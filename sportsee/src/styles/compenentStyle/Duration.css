@@ -5,3 +5,16 @@
     border-radius: 5px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
 }
+
+.titleDuration {
+    width: 55%;
+    margin-top: 35px;
+    margin-left: 35px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #ffffff;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    text-align: start;
+}
