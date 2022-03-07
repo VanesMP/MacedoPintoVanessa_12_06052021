@@ -8,57 +8,66 @@ import {
   Tooltip
 } from "recharts";
 
-//import data from ../datas/12/activity.json
-
 import "../styles/compenentStyle/Activity.css"
 
 
-export default function Activity() {  
-    const data =[
-      {
-        day: "2020-07-01",
-        kilogram: 80,
-        calories: 240
-    },
-    {
+const data =[
+  {
+    day: "2020-07-01",
+    kilogram: 80,
+    calories: 240
+  },
+  {
         day: "2020-07-02",
         kilogram: 80,
         calories: 220
-    },
+      },
     {
         day: "2020-07-03",
         kilogram: 81,
         calories: 280
-    },
-    {
+      },
+      {
         day: "2020-07-04",
         kilogram: 81,
         calories: 290
-    },
-    {
+      },
+      {
         day: "2020-07-05",
         kilogram: 80,
         calories: 160
-    },
-    {
+      },
+      {
         day: "2020-07-06",
         kilogram: 78,
         calories: 162
-    },
-    {
+      },
+      {
         day: "2020-07-07",
         kilogram: 76,
         calories: 390
-    }
+      }
     ]
-    
+    //recuperer les jours des dates dans un tableau pour le passer sur l axe X
     const xLineDays =[]
     data.forEach((el) => {
       xLineDays.push(el.day.substr(-1))
     })
+    
+    console.log(xLineDays)
 
-console.log(xLineDays)
-
+    //customiser le tooltip
+    const CustomTooltip = ({data}) => {
+        return (
+          <div className="customTooltip">
+            <p>{`kg`}</p>
+            <p>{`Kcal`}</p>
+          </div>
+        );
+      }
+    
+  export default function Activity() { 
+ 
     return(
         <div className="containerActivity">
           <div className="containerTitle">
@@ -80,11 +89,12 @@ console.log(xLineDays)
             }}
             >
             <CartesianGrid vertical={false} strokeDasharray="4 2" />
-            <XAxis dataKey="day" tickLine={false} dy={8}/>
-            <YAxis axisLine={false} tickLine={false} dx={8} dataKey="kilogram" orientation="right"/>
-            <Tooltip />
-            <Bar dataKey="kilogram" fill="#282d30" barSize={10} radius={[5, 5, 0, 0]}/>
-            <Bar dataKey="calories"  fill="#e60000" barSize={10} radius={[5, 5, 0, 0]}/>
+            <XAxis dataKey="day" tickLine={false} dy={6}/>
+            <YAxis type="number" dataKey="kilogram" yAxisId="kg" domain={[kilogramMin => (kilogramMin - 1), kilogramMax => (kilogramMax +2)]} orientation="right" axisLine={false} tickLine={false} dx={8} />
+            <YAxis hide type="number" dataKey="calories" yAxisId="kCal" domain={[caloriesMin => (caloriesMin - 100), caloriesMax => (caloriesMax + 100)]} />
+            <Tooltip content={CustomTooltip}/>
+            <Bar dataKey="kilogram" yAxisId="kg" fill="#282d30" barSize={10} radius={[5, 5, 0, 0]}/>
+            <Bar dataKey="calories" yAxisId="kCal"  fill="#e60000" barSize={10} radius={[5, 5, 0, 0]}/>
             </BarChart>
         </div>
   );

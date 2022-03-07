@@ -1,56 +1,65 @@
-.containerActivity {
-    width: 835px;
-    height: 320px;
-    background-color: #fbfbfb;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-}
-
-.containerTitle {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 90%;
-    margin: auto;
-}
-
-.containerTitle h2 {
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 24px;
-    color: #20253A;
-}
-
-.containerTitle p {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 24px;
-    color: #74798c;
-}
-
-.legend {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.poids,
-.calorie {
-    width: 8px;
-    height: 8px;
-    border-radius: 5px;
-    margin-right: 7px;
-}
-
-.poids {
-    background-color: #282d30;
-}
-
-.calorie {
-    background-color: #e60000;
-    margin-left: 30px;
-}
+    .containerActivity {
+        width: 835px;
+        height: 320px;
+        background-color: #fbfbfb;
+        border-radius: 5px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    
+    .containerTitle {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+        margin: auto;
+    }
+    
+    .containerTitle h2 {
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 24px;
+        color: #20253A;
+    }
+    
+    .containerTitle p {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+        color: #74798c;
+    }
+    
+    .legend {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .poids,
+    .calorie {
+        width: 8px;
+        height: 8px;
+        border-radius: 5px;
+        margin-right: 7px;
+    }
+    
+    .poids {
+        background-color: #282d30;
+    }
+    
+    .calorie {
+        background-color: #e60000;
+        margin-left: 30px;
+    }
+    
+    .customTooltip {
+        width: 39px;
+        height: 63px;
+        background-color: #e60000;
+        color: #ffffff;
+        font-size: 7px;
+        line-height: 24px;
+    }
