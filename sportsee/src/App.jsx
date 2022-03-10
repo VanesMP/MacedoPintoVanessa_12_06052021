@@ -1,5 +1,6 @@
 import NavHorizontal from './components/NavHorizontal';
 import NavVertical from './components/NavVertical';
+import Header from './components/Header';
 import Activity from './components/Activity';
 import Duration from './components/Duration';
 import Intensity from './components/Intensity';
@@ -16,6 +17,7 @@ function App() {
             <div className='containerCharts'>
             <NavVertical />
             <div className='containerSession'>
+            <Header />
             <Activity />      
                 <div className='charts'>
                 <Duration />
