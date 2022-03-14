@@ -55,7 +55,7 @@ const data =[
     })
     
     //console.log(xLineDays)
-
+    //console.log(data)
     //customiser le tooltip
     const CustomTooltip = ({data}) => {
         return (
@@ -89,7 +89,7 @@ const data =[
             }}
             >
             <CartesianGrid vertical={false} strokeDasharray="4 2" />
-            <XAxis dataKey="day" tickLine={false} dy={6}/>
+            <XAxis dataKey='day' tickLine={false} dy={6} />
             <YAxis type="number" dataKey="kilogram" yAxisId="kg" domain={[kilogramMin => (kilogramMin - 1), kilogramMax => (kilogramMax +2)]} orientation="right" axisLine={false} tickLine={false} dx={8} />
             <YAxis hide type="number" dataKey="calories" yAxisId="kCal" domain={[caloriesMin => (caloriesMin - 100), caloriesMax => (caloriesMax + 100)]} />
             <Tooltip content={CustomTooltip}/>

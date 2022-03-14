@@ -1,0 +1,47 @@
+.cardNutriment {
+    width: 258px;
+    height: 124px;
+    border-radius: 5px;
+    background-color: #fbfbfb;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+}
+
+.nutriment {
+    width: 90%;
+    height: 90%;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+}
+
+.textNutriment {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dataValue {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 32px;
+    color: #282d30;
+    margin: 0;
+}
+
+.nutriment {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nutrimentText {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 34px;
+    color: #74798c;
+    margin: 0;
+}

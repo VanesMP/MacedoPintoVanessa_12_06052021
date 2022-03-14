@@ -2,6 +2,7 @@ import "../styles/compenentStyle/Duration.css";
 
 import { 
     LineChart, 
+    Tooltip,
     Line, 
     XAxis,
     ResponsiveContainer, 
@@ -39,6 +40,15 @@ import {
         }
     ]
 
+    //customiser le tooltip
+    const CustomTooltipLine = ({data}) => {
+        return (
+          <div className="customTooltipline">
+            <p>{`min`}</p>
+          </div>
+        );
+      }
+
 export default function Duration() {
 
     return(
@@ -46,9 +56,10 @@ export default function Duration() {
             <h2 className="titleDuration">Durée moyenne des sessions</h2>
             <ResponsiveContainer width="100%" height="60%">
                 <LineChart width={300} height={100} data={data}>
-                <XAxis dataKey="day" axisLine={false} tickLine={false} dy={8} />
-                <YAxis hide dataKey="sessionLength" domain={["sessionLengthMin", sessionLengthMax => (sessionLengthMax +10)]} />
-                <Line type="monotone" dataKey="sessionLength" stroke="#8884d8" strokeWidth={2} />
+                <XAxis dataKey="day" axisLine={false} tickLine={false} dy={8} padding={{ left: 10, right: 10 }} stroke='#ffffff' opacity={0.5}/>
+                <YAxis hide dataKey="sessionLength" domain={[sessionLengthMin => (sessionLengthMin - 10), sessionLengthMax => (sessionLengthMax +10)]} />
+                <Tooltip content={CustomTooltipLine} />
+                <Line type="natural"  dataKey="sessionLength" stroke="#ffffff" dot={false} activeDot={{stroke:"white", strokeWidth:"6", strokeOpacity:"0.4", r: 4 }}/>
                 </LineChart>
             </ResponsiveContainer>
         </div>

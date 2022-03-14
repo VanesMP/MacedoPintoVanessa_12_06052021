@@ -5,6 +5,7 @@ import Activity from './components/Activity';
 import Duration from './components/Duration';
 import Intensity from './components/Intensity';
 import Score from './components/Score';
+import ColumnNutriments from './components/ColumnNutriments';
 
 import './App.css';
 
@@ -24,7 +25,8 @@ function App() {
                 <Intensity />
                 <Score />
                 </div>
-                </div>
+            </div>
+            <ColumnNutriments />
             </div>
         </div>
     );
