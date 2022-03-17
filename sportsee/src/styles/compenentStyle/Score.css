@@ -5,3 +5,12 @@
     border-radius: 5px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
 }
+
+.titleScore {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #20253a;
+    width: max-content;
+    margin: 24px 20px 5px;
+}
