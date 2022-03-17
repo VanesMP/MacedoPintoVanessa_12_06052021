@@ -7,10 +7,12 @@
 }
 
 .containerChart {
-    width: 90%;
-    height: 90%;
-    margin: auto;
+    width: 100%;
+    height: 93%;
     align-items: flex-end;
     display: flex;
     justify-content: center;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 24px;
 }

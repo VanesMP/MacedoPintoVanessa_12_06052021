@@ -9,8 +9,6 @@ const data = [{
         }
 ]
 
-console.log(data.firstName)
-
 function Header(){
 
     return(

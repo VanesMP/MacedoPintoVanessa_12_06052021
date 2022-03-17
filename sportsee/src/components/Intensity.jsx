@@ -8,60 +8,55 @@ import { Radar,
 import "../styles/compenentStyle/Intensity.css"
 
 const data = [
-    {
-        kind: [{
-        1: "cardio",
-        2: "energy",
-        3: "endurance",
-        4: "strength",
-        5: "speed",
-        6: "intensity"
-    }],
-    datas: [{
+   {
             value: 80,
-            kind: 1
+            kind: 'cardio'
         },
         {
             value: 120,
-            kind: 2
+            kind: 'energy'
         },
         {
             value: 140,
-            kind: 3
+            kind: 'endurance'
         },
         {
             value: 50,
-            kind: 4
+            kind: 'strength'
         },
         {
             value: 200,
-            kind: 5
+            kind: 'speed'
         },
         {
             value: 90,
-            kind: 6
-        }]
-    }
+            kind: 'intensity'
+        }
 ]
 
-console.log(data)
+const tranformKind = (tickItem) => {
+    return tickItem.replace(/^./, tickItem[0].toUpperCase());
+  }
 
+ function Intensity() {
 
-export default function Intensity() {
-
+   let kindsSort = [...data].reverse()
+    
     return(
         <div className="containerIntensity">
             <div className='containerChart'>
-    <ResponsiveContainer width="90%" height="90%" >
-    <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+    <ResponsiveContainer width="100%" height="90%" >
+    <RadarChart cx="50%" cy="50%" outerRadius="80%" data={kindsSort}>
     <PolarGrid />
-    <PolarAngleAxis  />
-    <PolarRadiusAxis  angle={30} domain={[0, 50]}/>
-    <Radar dataKey="value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+    <PolarAngleAxis dataKey='kind' tickFormatter={tranformKind} tickLine={false} cy={50} stroke="#ffffff" />
+    <PolarRadiusAxis tickCount={6} axisLine={false}  tick={false} dataKey='value' domain={[0, valueMax => valueMax + 50]}/>
+    <Radar dataKey="value"  fill="#FF0101" fillOpacity={0.6} />
     </RadarChart>
 </ResponsiveContainer>
             </div>
         </div>
     )
 }
+
+export default Intensity;
 /**/

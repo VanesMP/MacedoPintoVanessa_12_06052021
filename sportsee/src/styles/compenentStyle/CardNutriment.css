@@ -38,7 +38,7 @@
 }
 
 .nutrimentText {
-    width: 100%;
+    width: auto;
     font-size: 14px;
     font-weight: 500;
     line-height: 34px;

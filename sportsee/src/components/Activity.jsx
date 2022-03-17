@@ -48,14 +48,7 @@ const data =[
         calories: 390
       }
     ]
-    //recuperer les jours des dates dans un tableau pour le passer sur l axe X
-    const xLineDays =[]
-    data.forEach((el) => {
-      xLineDays.push(el.day.substr(-1))
-    })
     
-    //console.log(xLineDays)
-    //console.log(data)
     //customiser le tooltip
     const CustomTooltip = ({data}) => {
         return (
@@ -65,6 +58,13 @@ const data =[
           </div>
         );
       }
+
+    //Formatter ticks x line
+    const tranformDate = (tickItem) => {
+      let newTickItem =new Date(tickItem)
+      let newDay = newTickItem.getDate()
+     return newDay
+    }
     
   export default function Activity() { 
  
@@ -86,10 +86,9 @@ const data =[
                 right: 30,
                 left: 20,
                 bottom: 5
-            }}
-            >
+            }}>
             <CartesianGrid vertical={false} strokeDasharray="4 2" />
-            <XAxis dataKey='day' tickLine={false} dy={6} />
+            <XAxis dataKey='day' tickFormatter={tranformDate} tickLine={false} dy={6} />
             <YAxis type="number" dataKey="kilogram" yAxisId="kg" domain={[kilogramMin => (kilogramMin - 1), kilogramMax => (kilogramMax +2)]} orientation="right" axisLine={false} tickLine={false} dx={8} />
             <YAxis hide type="number" dataKey="calories" yAxisId="kCal" domain={[caloriesMin => (caloriesMin - 100), caloriesMax => (caloriesMax + 100)]} />
             <Tooltip content={CustomTooltip}/>
