@@ -50,7 +50,7 @@ const data =[
     ]
     
     //customiser le tooltip
-    const CustomTooltip = ({data}) => {
+    const CustomTooltip = ({ active, payload}) => {
         return (
           <div className="customTooltip">
             <p>{`kg`}</p>

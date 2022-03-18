@@ -38,9 +38,10 @@ const tranformKind = (tickItem) => {
     return tickItem.replace(/^./, tickItem[0].toUpperCase());
   }
 
+  let kindsSort = [...data].reverse()
+  
  function Intensity() {
 
-   let kindsSort = [...data].reverse()
     
     return(
         <div className="containerIntensity">
@@ -59,4 +60,3 @@ const tranformKind = (tickItem) => {
 }
 
 export default Intensity;
-/**/
