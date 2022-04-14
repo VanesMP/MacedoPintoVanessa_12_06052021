@@ -26,7 +26,7 @@ function GetDataUsers(category) {
     // GET request using fetch inside useEffect React hook
     async function dataUser(){
         const response = await fetch(url)
-        const data =await response.json()
+        const data = await response.json()
         return setDataUser(data)
     }
     dataUser()   
