@@ -9,9 +9,10 @@ import {
 } from "recharts";
 
 import "../styles/compenentStyle/Activity.css"
+import GetDataUsers from "../fetchData";
 
 
-const data =[
+/*const data =[
   {
     day: "2020-07-01",
     kilogram: 80,
@@ -47,17 +48,8 @@ const data =[
         kilogram: 76,
         calories: 390
       }
-    ]
+    ]*/
     
-    //customiser le tooltip
-    const CustomTooltip = ({ active, payload}) => {
-        return (
-          <div className="customTooltip">
-            <p>{`kg`}</p>
-            <p>{`Kcal`}</p>
-          </div>
-        );
-      }
 
     //Formatter ticks x line
     const tranformDate = (tickItem) => {
@@ -67,6 +59,33 @@ const data =[
     }
     
   export default function Activity() { 
+
+//     const [data, setDataUser] = useState(null);
+
+//      useEffect(() => {
+//      // GET request using fetch inside useEffect React hook
+//      fetch('http://localhost:3000/user/12/activity')
+//          .then(response => response.json())
+//          .then(data => setDataUser(data));
+
+//  // empty dependency array means this effect will only run once (like componentDidMount in classes)
+//  }, []);
+
+//  console.log({data})
+    
+    // /*const { id } = useParams()*/
+const {data} = GetDataUsers('activity')
+console.log({data})
+
+    //customiser le tooltip
+    const CustomTooltip = () => {
+      return (
+        <div className="customTooltip">
+          {/* <p>{`${data?.data?.sessions?.kilogram}kg`}</p>
+          <p>{`${data?.data?.sessions?.calories}Kcal`}</p> */}
+        </div>
+      );
+    }
  
     return(
         <div className="containerActivity">
@@ -80,7 +99,7 @@ const data =[
             <BarChart
             width={800}
             height={250}
-            data={data}
+            data={data?.data?.sessions}
             margin={{
                 top: 5,
                 right: 30,

@@ -1,3 +1,5 @@
+
+
 import NavHorizontal from './components/NavHorizontal';
 import NavVertical from './components/NavVertical';
 import Header from './components/Header';
@@ -8,7 +10,14 @@ import Score from './components/Score';
 import ColumnNutriments from './components/ColumnNutriments';
 
 import './App.css';
+//import { useEffect } from 'react';
 
+/*const url = 'http://localhost:3000/user/:id'
+
+fetch(url)
+    .then(response => {
+        console.log(response.json());
+    })*/
 
 function App() {
 

@@ -14,3 +14,28 @@
     width: max-content;
     margin: 24px 20px 5px;
 }
+
+.chart {
+    width: 258px;
+    height: 263px;
+    position: absolute;
+    z-index: 4;
+}
+
+.score {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 26px;
+    color: #282d30;
+}
+
+.objectif {
+    margin-top: 39px;
+    width: 258px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    color: #282d30bc;
+    position: absolute;
+    z-index: 2;
+}
