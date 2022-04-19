@@ -1,3 +1,4 @@
+import { useParams } from "react-router";
 import { Radar,
         RadarChart, 
         PolarGrid, 
@@ -6,7 +7,7 @@ import { Radar,
         ResponsiveContainer } from 'recharts'
 
 import "../styles/compenentStyle/Intensity.css"
-import GetDataUsers from '../fetchData'
+import {GetPerformance} from '../Getdata'
 
 // const data = [
 //    {
@@ -35,20 +36,11 @@ import GetDataUsers from '../fetchData'
 //         }
 // ]
 
-// const tranformKind = (tickItem) => {
-//     return tickItem.replace(/^./, tickItem[0].toUpperCase());
-//   }
-
-
   const tranformKind = (tickItem) => {
     const kinds = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Energie', 'Cardio']
-    return kinds
+    return kinds[tickItem -1]
   }
 
-
-//   let kindsSort = [...data].reverse()
-//   console.log(kindsSort)
-  
  function Intensity() {
 
     // const [data, setDataUser] = useState(null)
@@ -65,18 +57,18 @@ import GetDataUsers from '../fetchData'
    
     // console.log(data)
 
-    // /*const { id } = useParams()*/
-const {data} = GetDataUsers('performance')
-console.log({data})
+const { id } = useParams()
+const {performance} = GetPerformance(id)
+console.log({performance})
     
     
     return(
         <div className="containerIntensity">
             <div className='containerChart'>
     <ResponsiveContainer width="100%" height="90%" >
-    <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data?.data?.data}>
+    <RadarChart outerRadius="80%" data={performance?.data?.data}>
     <PolarGrid />
-    <PolarAngleAxis dataKey='kind' tickFormatter={tranformKind} tickLine={false} cy={50} stroke="#ffffff" />
+    <PolarAngleAxis dataKey='kind' tickFormatter={tranformKind} tickLine={false}  stroke="#ffffff" />
     <PolarRadiusAxis tickCount={6} axisLine={false}  tick={false} dataKey='value' domain={[0, valueMax => valueMax + 50]}/>
     <Radar dataKey="value"  fill="#FF0101" fillOpacity={0.6} />
     </RadarChart>

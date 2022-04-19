@@ -30,11 +30,12 @@
 }
 
 .objectif {
-    margin-top: 39px;
-    width: 258px;
+    width: auto;
+    margin-top: 59px;
+    margin-left: 102px;
     font-size: 16px;
     font-weight: 500;
-    line-height: 26px;
+    line-height: 23px;
     color: #282d30bc;
     position: absolute;
     z-index: 2;

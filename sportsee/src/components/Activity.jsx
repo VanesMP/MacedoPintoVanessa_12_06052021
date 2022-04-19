@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams } from "react-router";
 import {
   BarChart,
   Bar,
@@ -9,7 +10,7 @@ import {
 } from "recharts";
 
 import "../styles/compenentStyle/Activity.css"
-import GetDataUsers from "../fetchData";
+import {GetActivity} from "../Getdata";
 
 
 /*const data =[
@@ -73,9 +74,9 @@ import GetDataUsers from "../fetchData";
 
 //  console.log({data})
     
-    // /*const { id } = useParams()*/
-const {data} = GetDataUsers('activity')
-console.log({data})
+const { id } = useParams()
+const {activity} = GetActivity(id)
+console.log({activity})
 
     //customiser le tooltip
     const CustomTooltip = () => {
@@ -99,7 +100,7 @@ console.log({data})
             <BarChart
             width={800}
             height={250}
-            data={data?.data?.sessions}
+            data={activity?.data?.sessions}
             margin={{
                 top: 5,
                 right: 30,

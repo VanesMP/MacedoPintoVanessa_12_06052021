@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 * {
     margin: 0;
+    font-family: 'Roboto';
 }
 
 .container {
@@ -53,9 +54,10 @@
     width: 315px;
     height: 110px;
     border-radius: 5px;
-    box-shadow: #FF0101 0px 2px 5px -1px, #FF0101 0px 1px 3px -1px;
+    box-shadow: #000000 0px 2px 5px -1px, #000000 0px 1px 3px -1px;
     align-items: center;
     justify-content: space-evenly;
+    cursor: pointer;
 }
 
 .empty {

@@ -1,5 +1,6 @@
+import { useParams } from "react-router";
 import "../styles/compenentStyle/Header.css"
-import GetDataUsers from "../fetchData"
+import {GetInfos} from "../Getdata"
 // import { useState, useEffect } from 'react'
 
 /*const data = [{
@@ -37,13 +38,13 @@ import GetDataUsers from "../fetchData"
 
 function Header() {
     
-    // /*const { id } = useParams()*/
-const {data} = GetDataUsers('usersInfo')
-console.log({data})
+const { id } = useParams()
+const {infosUser} = GetInfos(id)
+console.log({infosUser})
 
     return(
     <div className="containerHeader">    
-    <h1 className="titleHello" key={data?.data?.userInfos?.firstName}>Bonjour <span style={{color: "red"}}>{data?.data?.userInfos?.firstName}</span></h1>     
+    <h1 className="titleHello" key={infosUser?.data?.userInfos?.firstName}>Bonjour <span style={{color: "red"}}>{infosUser?.data?.userInfos?.firstName}</span></h1>     
     <p className="congrats">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
     </div>
     )

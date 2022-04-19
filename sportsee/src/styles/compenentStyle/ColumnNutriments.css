@@ -1,8 +1,9 @@
 .containerNutriments {
-    width: 1000px;
-    margin-top: 164px;
+    width: 320px;
+    height: 631px;
+    margin-top: 167px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }

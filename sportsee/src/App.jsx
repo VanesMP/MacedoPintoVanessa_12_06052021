@@ -1,13 +1,7 @@
-
-
-import NavHorizontal from './components/NavHorizontal';
-import NavVertical from './components/NavVertical';
-import Header from './components/Header';
-import Activity from './components/Activity';
-import Duration from './components/Duration';
-import Intensity from './components/Intensity';
-import Score from './components/Score';
-import ColumnNutriments from './components/ColumnNutriments';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Welcome from './pages/Welcome';
+import Dashboard from './pages/Dashboard';
 
 import './App.css';
 //import { useEffect } from 'react';
@@ -22,22 +16,12 @@ fetch(url)
 function App() {
 
     return ( 
-        <div className='App'>
-            <NavHorizontal />
-            <div className='containerCharts'>
-            <NavVertical />
-            <div className='containerSession'>
-            <Header />
-            <Activity />      
-                <div className='charts'>
-                <Duration />
-                <Intensity />
-                <Score />
-                </div>
-            </div>
-            <ColumnNutriments />
-            </div>
-        </div>
+      <Router>  
+        <Routes>
+          <Route exact path="/" element={<Welcome/>}/>
+          <Route path="/user/:id" element={<Dashboard/>}/>
+        </Routes> 
+    </Router> 
     );
 }
 

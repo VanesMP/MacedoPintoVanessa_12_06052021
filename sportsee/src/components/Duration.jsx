@@ -1,5 +1,6 @@
+import { useParams } from "react-router";
 import "../styles/compenentStyle/Duration.css"
-import GetDataUsers from "../fetchData";
+import {GetSession} from "../Getdata";
 
 import { 
     LineChart, 
@@ -41,46 +42,34 @@ import {
     //     }
     // ]
 
-    //customiser le tooltip
-    const CustomTooltipLine = ({data}) => {
-        return (
-          <div className="customTooltipline">
-            <p>{`min`}</p>
-          </div>
-        );
-      }
-
       //Formatter ticks
       const tranformDay = (tickItem) => {
         const days =['L', 'M', 'M', 'J', 'V', 'S', 'D']
-       //console.log(days[tickItem])
        return(days[tickItem - 1])
       }
 
 export default function Duration() {
 
-  // const [data, setDataUser] = useState(null);
-
-  // useEffect(() => {
-  //     // GET request using fetch inside useEffect React hook
-  //     fetch('http://localhost:3000/user/12/average-sessions')
-  //         .then(response => response.json())
-  //         .then(data => setDataUser(data));
- 
-  // // empty dependency array means this effect will only run once (like componentDidMount in classes)
-  // }, []);
- 
-  // console.log({data})  
   
-  // /*const { id } = useParams()*/
-const {data} = GetDataUsers('average')
-console.log({data})
+const { id } = useParams()
+const {session} = GetSession(id)
+console.log({session})
+
+
+ //customiser le tooltip
+ const CustomTooltipLine = () => {
+  return (
+    <div className="customTooltipline">
+      <p>{`min`}</p>
+    </div>
+  );
+}
 
     return(
         <div className="containerDuration">
             <h2 className="titleDuration">Durée moyenne des sessions</h2>
             <ResponsiveContainer width="100%" height="60%">
-                <LineChart width={300} height={100} data={data?.data?.sessions}>
+                <LineChart width={300} height={100} data={session?.data?.sessions}>
                 <XAxis dataKey="day" tickFormatter={tranformDay} axisLine={false} tickLine={false} dy={8} padding={{ left: 10, right: 10 }} stroke='#ffffff' opacity={0.5} style={{fontSize:'12'}}/>
                 <YAxis hide dataKey="sessionLength" domain={[sessionLengthMin => (sessionLengthMin - 10), sessionLengthMax => (sessionLengthMax +10)]} />
                 <Tooltip content={CustomTooltipLine} />
