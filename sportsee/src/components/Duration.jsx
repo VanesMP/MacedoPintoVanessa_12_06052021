@@ -55,14 +55,13 @@ const { id } = useParams()
 const {session} = GetSession(id)
 console.log({session})
 
-
  //customiser le tooltip
- const CustomTooltipLine = () => {
-  return (
-    <div className="customTooltipline">
-      <p>{`min`}</p>
-    </div>
-  );
+ const CustomTooltipLine = ({active, payload}) => {
+   if (active && payload && payload.length){
+  return <div className="customTooltipline">{`${payload[0].value} min`}</div>
+  } else {
+  return null
+  }
 }
 
     return(
@@ -72,7 +71,7 @@ console.log({session})
                 <LineChart width={300} height={100} data={session?.data?.sessions}>
                 <XAxis dataKey="day" tickFormatter={tranformDay} axisLine={false} tickLine={false} dy={8} padding={{ left: 10, right: 10 }} stroke='#ffffff' opacity={0.5} style={{fontSize:'12'}}/>
                 <YAxis hide dataKey="sessionLength" domain={[sessionLengthMin => (sessionLengthMin - 10), sessionLengthMax => (sessionLengthMax +10)]} />
-                <Tooltip content={CustomTooltipLine} />
+                <Tooltip content={<CustomTooltipLine/>}/>
                 <Line type="natural"  dataKey="sessionLength" stroke="#ffffff" dot={false} activeDot={{stroke:"white", strokeWidth:"6", strokeOpacity:"0.4", r: 4 }}/>
                 </LineChart>
             </ResponsiveContainer>

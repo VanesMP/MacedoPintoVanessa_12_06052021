@@ -72,24 +72,21 @@ console.log({infosUser})
     const ShowScore = () =>{
         if(infosUser?.data.todayScore === undefined || infosUser?.data.todayScore === null){
             return [{value:1, fill:'none'},
-                    {value:infosUser?.data?.score, fill:'#ff0000'}]
+                    {value:infosUser?.data?.score, fill:'transparent'}]
         } else {
             return [{value:1, fill:'none'},
                     {value:infosUser?.data?.todayScore, fill:'#ff0000'}]
         }
     }
-let test = ShowScore()
-console.log(test)
-
-    // const testScore = [{value:1, fill:'pink'},
-    // {value:0.12, fill:'#ff0000'}]
-    // console.log(testScore)
-
+    let radialScore = ShowScore()
+    console.log(radialScore)
     
     return(
         <div className="containerScore">
             <h1 className="titleScore">Score</h1>
-            <h2 className="objectif"><span className="score"><ScoreData/></span><br/>{`de votre`}<br/>{`objectif`}</h2>
+            <h2 className="objectif"> 
+               <div className="scoreValue" ><span className="score"><ScoreData/></span><br/>{`de votre`}<br/>{`objectif`} </div>
+            </h2>
             <div className="chart">
             <ResponsiveContainer width="100%" height="75%" >
             <RadialBarChart
@@ -100,9 +97,8 @@ console.log(test)
             barSize={10}
             startAngle={90}
             endAngle={450}
-            data={test}>
+            data={radialScore}>
             <RadialBar cornerRadius={50}  dataKey='value' />
-            {/* <PolarAngleAxis type="number" domain={[0, 1]}  tick={false} /> */}
             </RadialBarChart>
          </ResponsiveContainer>
         </div>

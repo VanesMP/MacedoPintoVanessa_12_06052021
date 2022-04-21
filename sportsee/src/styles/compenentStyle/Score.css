@@ -29,14 +29,25 @@
     color: #282d30;
 }
 
+.scoreValue {
+    width: 50%;
+    height: 50%;
+}
+
 .objectif {
-    width: auto;
-    margin-top: 59px;
-    margin-left: 102px;
+    width: 171px;
+    height: 171px;
+    margin-top: 13px;
+    margin-left: 43px;
+    border-radius: 50%;
     font-size: 16px;
     font-weight: 500;
     line-height: 23px;
-    color: #282d30bc;
+    color: #282d30d1;
+    background-color: #ffffff;
     position: absolute;
     z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

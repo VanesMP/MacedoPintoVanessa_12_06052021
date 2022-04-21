@@ -79,13 +79,15 @@ const {activity} = GetActivity(id)
 console.log({activity})
 
     //customiser le tooltip
-    const CustomTooltip = () => {
-      return (
-        <div className="customTooltip">
-          {/* <p>{`${data?.data?.sessions?.kilogram}kg`}</p>
-          <p>{`${data?.data?.sessions?.calories}Kcal`}</p> */}
-        </div>
-      );
+    const CustomTooltip = ({active, payload}) => {
+      if(active && payload && payload.length){
+      return (<div className="customTooltip">
+          <p>{`${payload[0].value} kg`}</p>
+          <p>{`${payload[1].value} Kcal`}</p>
+        </div>)
+      } else {
+      return null
+      }
     }
  
     return(
@@ -111,7 +113,7 @@ console.log({activity})
             <XAxis dataKey='day' tickFormatter={tranformDate} tickLine={false} dy={6} />
             <YAxis type="number" dataKey="kilogram" yAxisId="kg" domain={[kilogramMin => (kilogramMin - 1), kilogramMax => (kilogramMax +2)]} orientation="right" axisLine={false} tickLine={false} dx={8} />
             <YAxis hide type="number" dataKey="calories" yAxisId="kCal" domain={[caloriesMin => (caloriesMin - 100), caloriesMax => (caloriesMax + 100)]} />
-            <Tooltip content={CustomTooltip}/>
+            <Tooltip content={<CustomTooltip/>}/>
             <Bar dataKey="kilogram" yAxisId="kg" fill="#282d30" barSize={10} radius={[5, 5, 0, 0]}/>
             <Bar dataKey="calories" yAxisId="kCal"  fill="#e60000" barSize={10} radius={[5, 5, 0, 0]}/>
             </BarChart>
