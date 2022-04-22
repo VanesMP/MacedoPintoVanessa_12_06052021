@@ -1,5 +1,6 @@
 
 import "../styles/compenentStyle/CardNutriment.css"
+import PropTypes from 'prop-types';
 
 export default function CardNutriment({icon, dataValue, text}) {
 
@@ -14,4 +15,10 @@ export default function CardNutriment({icon, dataValue, text}) {
             </div>
         </div>
     )
+}
+
+CardNutriment.prototype = {
+    icon: PropTypes.any,
+    dataValue: PropTypes.string,
+    text: PropTypes.string
 }

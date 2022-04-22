@@ -8,17 +8,10 @@ import Intensity from '../components/Intensity';
 import Score from '../components/Score';
 import ColumnNutriments from '../components/ColumnNutriments';
 
-import '../styles/pageStyle/Dashboard.css'
-//import { useEffect } from 'react';
+import '../styles/pageStyle/Dashboard.css';
 
-/*const url = 'http://localhost:3000/user/:id'
 
-fetch(url)
-    .then(response => {
-        console.log(response.json());
-    })*/
-
-function Dashboard() {
+export default function Dashboard() {
 
     return ( 
         <div className='dashboard'>
@@ -39,8 +32,3 @@ function Dashboard() {
         </div>
     );
 }
-
-export default Dashboard;
-
-// fetch("/datas/12")
-//.then((response) => console.log(response.json()));

@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router";
+import PropTypes from 'prop-types';
 import {
   BarChart,
   Bar,
@@ -13,7 +14,8 @@ import "../styles/compenentStyle/Activity.css"
 import {GetActivity} from "../Getdata";
 
 
-/*const data =[
+/*Data before call api, using for implementation
+const data =[
   {
     day: "2020-07-01",
     kilogram: 80,
@@ -58,26 +60,6 @@ import {GetActivity} from "../Getdata";
       let newDay = newTickItem.getDate()
      return newDay
     }
-    
-  export default function Activity() { 
-
-//     const [data, setDataUser] = useState(null);
-
-//      useEffect(() => {
-//      // GET request using fetch inside useEffect React hook
-//      fetch('http://localhost:3000/user/12/activity')
-//          .then(response => response.json())
-//          .then(data => setDataUser(data));
-
-//  // empty dependency array means this effect will only run once (like componentDidMount in classes)
-//  }, []);
-
-//  console.log({data})
-    
-const { id } = useParams()
-const {activity} = GetActivity(id)
-console.log({activity})
-
     //customiser le tooltip
     const CustomTooltip = ({active, payload}) => {
       if(active && payload && payload.length){
@@ -89,6 +71,14 @@ console.log({activity})
       return null
       }
     }
+    
+export default function Activity() { 
+//Get ID from URL 
+const { id } = useParams()
+//Get data name activity by fetch to Getdata.jsx
+const {activity} = GetActivity(id)
+console.log({activity})
+
  
     return(
         <div className="containerActivity">
@@ -103,12 +93,7 @@ console.log({activity})
             width={800}
             height={250}
             data={activity?.data?.sessions}
-            margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5
-            }}>
+            margin={{top: 5,right: 30,left: 20, bottom: 5}}>
             <CartesianGrid vertical={false} strokeDasharray="4 2" />
             <XAxis dataKey='day' tickFormatter={tranformDate} tickLine={false} dy={6} />
             <YAxis type="number" dataKey="kilogram" yAxisId="kg" domain={[kilogramMin => (kilogramMin - 1), kilogramMax => (kilogramMax +2)]} orientation="right" axisLine={false} tickLine={false} dx={8} />
@@ -120,3 +105,12 @@ console.log({activity})
         </div>
   );
 }
+
+CustomTooltip.propTypes ={
+  active: PropTypes.bool,
+  payload: PropTypes.array
+}
+
+
+
+

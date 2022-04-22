@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom"
-import "../styles/pageStyle/Welcome.css"
+import { Link } from "react-router-dom";
+import "../styles/pageStyle/Welcome.css";
 
-import NavHorizontal from "../components/NavHorizontal"
-import NavVertical from "../components/NavVertical"
-import karl from "../assets/Karl.png"
-import cecilia from "../assets/Cecilia.png"
-import empty from "../assets/newOne.png"
+import NavHorizontal from "../components/NavHorizontal";
+import NavVertical from "../components/NavVertical";
+import karl from "../assets/Karl.png";
+import cecilia from "../assets/Cecilia.png";
+import empty from "../assets/newOne.png";
 
-const Welcome = ()=>{
+export default function Welcome() {
 
   return(
         <div className="page">
@@ -20,7 +20,7 @@ const Welcome = ()=>{
             <p className="text">Sélectionnez un profil ... </p>
         </div>
         <div className="containerCard">
-            <Link to="/user/12/">
+            <Link to="/user/12/" style={{textDecoration: 'none', color:'black'}}>
         <div className="infoUser">
         <div className="card">
         <img src={karl} alt="identity pictures" className="identity"/>
@@ -31,7 +31,7 @@ const Welcome = ()=>{
         </div>
         </div>
             </Link>
-            <Link to="/user/18/">
+            <Link to="/user/18/" style={{textDecoration: 'none', color:'black'}}>
         <div className="infoUser">
         <div className="card">
         <img src={cecilia} alt="identity pictures" className="identity"/>
@@ -51,5 +51,3 @@ const Welcome = ()=>{
         </div>
   )
 }
-
-export default Welcome;

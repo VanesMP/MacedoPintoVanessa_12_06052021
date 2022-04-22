@@ -4,16 +4,8 @@ import Welcome from './pages/Welcome';
 import Dashboard from './pages/Dashboard';
 
 import './App.css';
-//import { useEffect } from 'react';
 
-/*const url = 'http://localhost:3000/user/:id'
-
-fetch(url)
-    .then(response => {
-        console.log(response.json());
-    })*/
-
-function App() {
+export default function App() {
 
     return ( 
       <Router>  
@@ -25,7 +17,3 @@ function App() {
     );
 }
 
-export default App;
-
-// fetch("/datas/12")
-//.then((response) => console.log(response.json()));

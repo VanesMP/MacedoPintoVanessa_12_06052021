@@ -1,64 +1,27 @@
 import { useParams } from "react-router";
-import "../styles/compenentStyle/Score.css"
+import "../styles/compenentStyle/Score.css";
 import {GetInfos} from "../Getdata";
 
 import {  RadialBarChart, RadialBar, ResponsiveContainer} from "recharts";
 
-
-
-//Recuperer le nombre contenu dans le data
-//le multiplier par 100 ( pour afficher le todayScore en pourcentage)
-
+//Data pour test avant call api, using for implementation
+// const data =[{
+//     todayScore: 0.12,
+//     keyData: {
+//         calorieCount: 1930,
+//         proteinCount: 155,
+//         carbohydrateCount: 290,
+//         lipidCount: 50
+//     }
+// }]
 
 export default function Score() {
     
-    // const data =[{
-    //     todayScore: 0.12,
-    //     keyData: {
-    //         calorieCount: 1930,
-    //         proteinCount: 155,
-    //         carbohydrateCount: 290,
-    //         lipidCount: 50
-    //     }
-    // }]
-    // console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
-    // console.log(data[0].todayScore)
-
-    // const data=[{
-    //     todayScore: 0.12
-    // }]
-    // console.log(data[0].todayScore)
-
-    // const score = data[0].todayScore
-    // console.log(score)
-
-    // const [data, setDataUser] = useState(null)
-    // /*const { id } = useParams()*/
-
-    // useEffect(() => {
-    //     // GET request using fetch inside useEffect React hook
-    //     fetch('http://localhost:3000/user/12')
-    //         .then(response => response.json())
-    //         .then(data => setDataUser(data));
-   
-    // // empty dependency array means this effect will only run once (like componentDidMount in classes)
-    // }, []);
-   
-    // console.log({data})
-
+ //Get ID from URL 
 const { id } = useParams()
+//Get data name infosUser by fetch to Getdata.jsx
 const {infosUser} = GetInfos(id)
 console.log({infosUser})
-
-//  console.log(data?.data?.todayScore);
-
-
-// let score = infosUser.data.todayScore
-// console.log(score)
-// let dataScore=[
-//     {value:1, fill:'pink'},
-//     {value:data[0].todayScore, fill:'#ff0000'}
-// ]
 
 //function pour récuperer le score des utilisateur nommé differemment dans la table.
     const ScoreData = () => {
@@ -72,7 +35,7 @@ console.log({infosUser})
     const ShowScore = () =>{
         if(infosUser?.data.todayScore === undefined || infosUser?.data.todayScore === null){
             return [{value:1, fill:'none'},
-                    {value:infosUser?.data?.score, fill:'transparent'}]
+                    {value:infosUser?.data?.score, fill:'#ff0000'}]
         } else {
             return [{value:1, fill:'none'},
                     {value:infosUser?.data?.todayScore, fill:'#ff0000'}]

@@ -1,18 +1,11 @@
 /*import { useState, useEffect } from 'react'
-
-
 nous allons les utiliser pour faire des calls API :
-
 __useEffect  nous permettra de déclencher le fetch;
-
 __useState  permettra de stocker le retour de l'API dans le  state  . 
-
 */
 
-import { useState, useEffect } from 'react'
-// import { ManageEndpoints } from './manageEndpoints.jsx'
-
-// export default function GetDataUsers() {
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 export const GetInfos = (id) => {
   const [infosUser, setInfosUser] = useState(null);
@@ -75,40 +68,19 @@ console.log({performance})
 return { performance:performance }
 }
 
-// export {GetActivity, GetPerformance, GetSession, GetInfos }
-
-
-
-
-
-//    const [data, setDataUser] = useState({});
-// //    const [error, setError] = useState(false)
-
-//    // data from api url/endpoints
-//    const url =  ManageEndpoints(category)
-
-//    useEffect(() => {
-//     //no url
-//     // if(!url)
-//     // return console.log('ERREUR')
-//     // GET request using fetch inside useEffect React hook
-//     async function dataUser(){
-//     //   try{  
-//         const response = await fetch(url)
-//         const data = await response.json()
-//         setDataUser(data)
-//         console.log('-------------------', data)
-//     // } catch(error){
-//     //     console.log(error)
-//     //     setError(true)
-//     // }
-//     }
-//     dataUser()   
-// // empty dependency array means this effect will only run once (like componentDidMount in classes)
-//    }, [url])
-
-//     console.log({data})
-//     return {data}
-
-
-
+GetInfos.propTypes={
+  id: PropTypes.string.isRequired,
+  infosUser: PropTypes.object.isRequired
+}
+GetSession.propTypes={
+  id: PropTypes.string.isRequired,
+  session: PropTypes.object.isRequired
+}
+GetActivity.propTypes={
+  id: PropTypes.string.isRequired,
+  activity: PropTypes.object.isRequired
+}
+GetPerformance.propTypes={
+  id: PropTypes.string.isRequired,
+  performance: PropTypes.object.isRequired
+}

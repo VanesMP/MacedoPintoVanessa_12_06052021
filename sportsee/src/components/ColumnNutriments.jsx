@@ -1,5 +1,5 @@
 import { useParams } from "react-router";
-
+import PropTypes from 'prop-types';
 import "../styles/compenentStyle/ColumnNutriments.css"
 import CardNutriment from "./CardNutriment"
 import calories from "../assets/calories.png"
@@ -10,21 +10,10 @@ import {GetInfos} from "../Getdata"
 
 
 export default function ColumnNutriments() {
-     
-    // const [data, setDataUser] = useState(null);
 
-    // useEffect(() => {
-    //     // GET request using fetch inside useEffect React hook
-    //     fetch('http://localhost:3000/user/12')
-    //         .then(response => response.json())
-    //         .then(data => setDataUser(data));
-   
-    // // empty dependency array means this effect will only run once (like componentDidMount in classes)
-    // }, []);
-   
-    // console.log({data})
-
+//Get ID from URL  
 const { id } = useParams()
+//Get data name infoUser by fetch to Getdata.jsx
 const {infosUser} = GetInfos(id)
 console.log({infosUser})
 
@@ -36,4 +25,10 @@ console.log({infosUser})
         <CardNutriment icon={fat} dataValue={infosUser?.data?.keyData?.lipidCount + 'g'} text="Lipides"/>
         </div>
     )
+}
+
+ColumnNutriments.propTypes ={
+    icon: PropTypes.any,
+    dataValue: PropTypes.string,
+    text: PropTypes.string
 }

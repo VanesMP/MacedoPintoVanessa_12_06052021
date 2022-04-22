@@ -1,4 +1,5 @@
 import { useParams } from "react-router";
+import PropTypes from 'prop-types';
 import { Radar,
         RadarChart, 
         PolarGrid, 
@@ -9,6 +10,7 @@ import { Radar,
 import "../styles/compenentStyle/Intensity.css"
 import {GetPerformance} from '../Getdata'
 
+// Data before call api, using for implementation
 // const data = [
 //    {
 //             value: 80,
@@ -41,23 +43,11 @@ import {GetPerformance} from '../Getdata'
     return kinds[tickItem -1]
   }
 
- function Intensity() {
+export default function Intensity() {
 
-    // const [data, setDataUser] = useState(null)
-    // /*const { id } = useParams()*/
-   
-    // useEffect(() => {
-    //     // GET request using fetch inside useEffect React hook
-    //     fetch('http://localhost:3000/user/12/performance')
-    //         .then(response => response.json())
-    //         .then(data => setDataUser(data));
-   
-    // // empty dependency array means this effect will only run once (like componentDidMount in classes)
-    // }, []);
-   
-    // console.log(data)
-
+ //Get ID from URL 
 const { id } = useParams()
+//Get data name infosUser by fetch to Getdata.jsx
 const {performance} = GetPerformance(id)
 console.log({performance})
     
@@ -78,6 +68,8 @@ console.log({performance})
     )
 }
 
-// 
+ tranformKind.propTypes ={
+    kinds: PropTypes.string
+ }
 
-export default Intensity;
+
