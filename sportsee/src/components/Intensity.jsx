@@ -1,5 +1,4 @@
 import { useParams } from "react-router";
-import PropTypes from 'prop-types';
 import { Radar,
         RadarChart, 
         PolarGrid, 
@@ -10,7 +9,7 @@ import { Radar,
 import "../styles/compenentStyle/Intensity.css"
 import {GetPerformance} from '../Getdata'
 
-// Data before call api, using for implementation
+//Mock data
 // const data = [
 //    {
 //             value: 80,
@@ -38,12 +37,13 @@ import {GetPerformance} from '../Getdata'
 //         }
 // ]
 
-  const tranformKind = (tickItem) => {
-    const kinds = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Energie', 'Cardio']
-    return kinds[tickItem -1]
-  }
 
 export default function Intensity() {
+
+    const tranformKind = (tickItem) => {
+      const kinds = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Energie', 'Cardio']
+      return kinds[tickItem -1]
+    }
 
  //Get ID from URL 
 const { id } = useParams()
@@ -59,7 +59,7 @@ console.log({performance})
     <RadarChart outerRadius="80%" data={performance?.data?.data}>
     <PolarGrid />
     <PolarAngleAxis dataKey='kind' tickFormatter={tranformKind} tickLine={false}  stroke="#ffffff" />
-    <PolarRadiusAxis tickCount={6} axisLine={false}  tick={false} dataKey='value'/>
+    <PolarRadiusAxis tickCount={6} axisLine={false}  tick={false} dataKey='value'  domain={[0, 250]}/>
     <Radar dataKey="value" fill="#FF0101" fillOpacity={0.6} />
     </RadarChart>
     </ResponsiveContainer>
@@ -68,8 +68,5 @@ console.log({performance})
     )
 }
 
- tranformKind.propTypes ={
-    kinds: PropTypes.arrayOf(PropTypes.string)
- }
 
 

@@ -4,7 +4,7 @@ import {GetInfos} from "../Getdata";
 
 import {  RadialBarChart, RadialBar, ResponsiveContainer} from "recharts";
 
-//Data pour test avant call api, using for implementation
+//Mock data
 // const data =[{
 //     todayScore: 0.12,
 //     keyData: {

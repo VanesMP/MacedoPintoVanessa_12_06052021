@@ -1,5 +1,4 @@
 import { useParams } from "react-router";
-import PropTypes from 'prop-types';
 import "../styles/compenentStyle/ColumnNutriments.css"
 import CardNutriment from "./CardNutriment"
 import calories from "../assets/calories.png"
@@ -25,10 +24,4 @@ console.log({infosUser})
         <CardNutriment icon={fat} dataValue={infosUser?.data?.keyData?.lipidCount + 'g'} text="Lipides"/>
         </div>
     )
-}
-
-ColumnNutriments.propTypes ={
-    icon: PropTypes.any,
-    dataValue: PropTypes.string,
-    text: PropTypes.string
 }

@@ -33,6 +33,10 @@
     color: #000000;
 }
 
+.infoUser:hover .lastName {
+    color: red;
+}
+
 .containerAll {
     display: flex;
     flex-direction: column;

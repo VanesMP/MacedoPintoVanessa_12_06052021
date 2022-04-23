@@ -25,8 +25,8 @@ export default function Welcome() {
         <div className="card">
         <img src={karl} alt="identity pictures" className="identity"/>
         <div className="infoUserText">
-        <h2 className="name">Karl, Dovineau</h2>
-        <p className="age">31 ans</p>
+        <h2><span className="lastName">Karl</span>, Dovineau</h2>
+        <p>31 ans</p>
         </div>
         </div>
         </div>
@@ -36,8 +36,8 @@ export default function Welcome() {
         <div className="card">
         <img src={cecilia} alt="identity pictures" className="identity"/>
         <div className="infoUserText">
-        <h2 className="name">Cecilia, Ratorez</h2>
-        <p className="age">34 ans</p>
+        <h2><span className="lastName">Cecilia</span>, Ratorez</h2>
+        <p>34 ans</p>
         </div>
         </div>
         </div>

@@ -18,6 +18,7 @@ export default function Dashboard() {
             <NavHorizontal />
             <div className='containerCharts'>
             <NavVertical />
+            <div className='containerSessionNutriment'>
             <div className='containerSession'>
             <Header />
             <Activity />      
@@ -28,7 +29,7 @@ export default function Dashboard() {
                 </div>
             </div>
             <ColumnNutriments />
-            </div>
+            </div></div>
         </div>
     );
 }
