@@ -1,4 +1,5 @@
 import { useParams } from "react-router";
+import PropTypes from 'prop-types';
 import { Radar,
         RadarChart, 
         PolarGrid, 
@@ -9,7 +10,7 @@ import { Radar,
 import "../styles/compenentStyle/Intensity.css"
 import {GetPerformance} from '../Getdata'
 
-//Mock data
+// Mock data
 // const data = [
 //    {
 //             value: 80,
@@ -37,13 +38,12 @@ import {GetPerformance} from '../Getdata'
 //         }
 // ]
 
+  const tranformKind = (tickItem) => {
+    const kinds = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Energie', 'Cardio']
+    return kinds[tickItem -1]
+  }
 
 export default function Intensity() {
-
-    const tranformKind = (tickItem) => {
-      const kinds = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Energie', 'Cardio']
-      return kinds[tickItem -1]
-    }
 
  //Get ID from URL 
 const { id } = useParams()
@@ -68,5 +68,8 @@ console.log({performance})
     )
 }
 
+ tranformKind.propTypes ={
+    kinds: PropTypes.arrayOf(PropTypes.string)
+ }
 
 

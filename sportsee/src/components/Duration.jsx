@@ -1,4 +1,5 @@
 import { useParams } from "react-router";
+import PropTypes from 'prop-types';
 import "../styles/compenentStyle/Duration.css"
 import {GetSession} from "../Getdata";
 
@@ -11,7 +12,7 @@ import {
     YAxis,
 } from 'recharts';
 
-    //Mock data
+    // Data before the call api, using for implementation
     // const data = [
     //     {
     //         day: 1,
@@ -43,23 +44,22 @@ import {
     //     }
     // ]
 
-    
-    export default function Duration() {
-        
-        //Formatter ticks
-        const tranformDay = (tickItem) => {
-          const days =['L', 'M', 'M', 'J', 'V', 'S', 'D']
-         return(days[tickItem - 1])
+      //Formatter ticks
+      const tranformDay = (tickItem) => {
+        const days =['L', 'M', 'M', 'J', 'V', 'S', 'D']
+       return(days[tickItem - 1])
+      }
+      
+       //customiser le tooltip
+       const CustomTooltipLine = ({active, payload}) => {
+         if (active && payload && payload.length){
+        return <div className="customTooltipline">{`${payload[0].value} min`}</div>
+        } else {
+        return null
         }
-        
-         //customiser le tooltip
-         const CustomTooltipLine = ({active, payload}) => {
-           if (active && payload && payload.length){
-          return <div className="customTooltipline">{`${payload[0].value} min`}</div>
-          } else {
-          return null
-          }
-        }
+      }
+
+export default function Duration() {
 
  //Get ID from URL 
 const { id } = useParams()
@@ -82,3 +82,11 @@ console.log({session})
     )
 }
 
+CustomTooltipLine.propTypes ={
+    active: PropTypes.bool,
+    payload: PropTypes.array
+  }
+
+  tranformDay.propTypes ={
+    days: PropTypes.string
+  }

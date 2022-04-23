@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router";
+import PropTypes from 'prop-types';
 import {
   BarChart,
   Bar,
@@ -52,27 +53,26 @@ const data =[
       }
     ]*/
     
-    
-    export default function Activity() { 
-  
-      //Formatter ticks x line
-      const tranformDate = (tickItem) => {
-        let newTickItem =new Date(tickItem)
-        let newDay = newTickItem.getDate()
-       return newDay
-      }
-      //customiser le tooltip
-      const CustomTooltip = ({active, payload}) => {
-        if(active && payload && payload.length){
-        return (<div className="customTooltip">
-            <p>{`${payload[0].value} kg`}</p>
-            <p>{`${payload[1].value} Kcal`}</p>
-          </div>)
-        } else {
-        return null
-        }
-      }
 
+    //Formatter ticks x line
+    const tranformDate = (tickItem) => {
+      let newTickItem =new Date(tickItem)
+      let newDay = newTickItem.getDate()
+     return newDay
+    }
+    //customiser le tooltip
+    const CustomTooltip = ({active, payload}) => {
+      if(active && payload && payload.length){
+      return (<div className="customTooltip">
+          <p>{`${payload[0].value} kg`}</p>
+          <p>{`${payload[1].value} Kcal`}</p>
+        </div>)
+      } else {
+      return null
+      }
+    }
+    
+export default function Activity() { 
 //Get ID from URL 
 const { id } = useParams()
 //Get data name activity by fetch to Getdata.jsx
@@ -105,3 +105,16 @@ console.log({activity})
         </div>
   );
 }
+
+tranformDate.propTypes ={
+  newDay: PropTypes.number
+}
+
+CustomTooltip.propTypes ={
+  active: PropTypes.bool,
+  payload: PropTypes.array
+}
+
+
+
+

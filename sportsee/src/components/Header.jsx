@@ -3,7 +3,7 @@ import "../styles/compenentStyle/Header.css"
 import {GetInfos} from "../Getdata"
 
 
-/*Data before call api, using for implementation
+/*Mock data
 const data = [{
             firstName: "Karl",
             lastName: "Dovineau",

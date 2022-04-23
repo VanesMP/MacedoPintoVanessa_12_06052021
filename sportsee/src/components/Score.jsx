@@ -1,5 +1,5 @@
 import { useParams } from "react-router";
-import "../styles/compenentStyle/Score.css";
+import "../styles/compenentStyle/Score.css"
 import {GetInfos} from "../Getdata";
 
 import {  RadialBarChart, RadialBar, ResponsiveContainer} from "recharts";
@@ -61,7 +61,7 @@ console.log({infosUser})
             startAngle={90}
             endAngle={450}
             data={radialScore}>
-            <RadialBar cornerRadius={50} dataKey='value' />
+            <RadialBar cornerRadius={50}  dataKey='value' />
             </RadialBarChart>
          </ResponsiveContainer>
         </div>
