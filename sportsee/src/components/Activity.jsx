@@ -106,6 +106,10 @@ console.log({activity})
   );
 }
 
+tranformDate.propTypes ={
+  newDay: PropTypes.number
+}
+
 CustomTooltip.propTypes ={
   active: PropTypes.bool,
   payload: PropTypes.array

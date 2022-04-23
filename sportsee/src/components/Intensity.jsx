@@ -59,17 +59,17 @@ console.log({performance})
     <RadarChart outerRadius="80%" data={performance?.data?.data}>
     <PolarGrid />
     <PolarAngleAxis dataKey='kind' tickFormatter={tranformKind} tickLine={false}  stroke="#ffffff" />
-    <PolarRadiusAxis tickCount={6} axisLine={false}  tick={false} dataKey='value' domain={[0, valueMax => valueMax + 50]}/>
-    <Radar dataKey="value"  fill="#FF0101" fillOpacity={0.6} />
+    <PolarRadiusAxis tickCount={6} axisLine={false}  tick={false} dataKey='value'/>
+    <Radar dataKey="value" fill="#FF0101" fillOpacity={0.6} />
     </RadarChart>
-</ResponsiveContainer>
+    </ResponsiveContainer>
             </div>
         </div>
     )
 }
 
  tranformKind.propTypes ={
-    kinds: PropTypes.string
+    kinds: PropTypes.arrayOf(PropTypes.string)
  }
 
 

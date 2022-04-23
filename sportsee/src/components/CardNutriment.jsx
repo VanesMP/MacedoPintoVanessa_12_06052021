@@ -17,7 +17,7 @@ export default function CardNutriment({icon, dataValue, text}) {
     )
 }
 
-CardNutriment.prototype = {
+CardNutriment.propTypes = {
     icon: PropTypes.any,
     dataValue: PropTypes.string,
     text: PropTypes.string

@@ -61,7 +61,7 @@ console.log({infosUser})
             startAngle={90}
             endAngle={450}
             data={radialScore}>
-            <RadialBar cornerRadius={50}  dataKey='value' />
+            <RadialBar cornerRadius={50} dataKey='value' />
             </RadialBarChart>
          </ResponsiveContainer>
         </div>
