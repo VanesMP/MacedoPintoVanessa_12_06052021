@@ -54,13 +54,23 @@ const data =[
     ]*/
     
 
-    //Formatter ticks x line
+    /** Formatter ticks: format date on x line
+    *  @function transfomDate
+    *  @param {string} tickItem
+    *  @returns {number} newDay
+    */
     const tranformDate = (tickItem) => {
       let newTickItem =new Date(tickItem)
       let newDay = newTickItem.getDate()
      return newDay
     }
-    //customiser le tooltip
+
+    /**Custom Tooltip to display (kg/cal) on the hover on the BarChart
+    * @function CustomTooltip
+    * @param {bool} active (initial value false, if set true the tooltip is displayed)
+    * @param {array} payload (data of the content to be displayed in the tooltip)
+    * @returns {JSX}
+    */
     const CustomTooltip = ({active, payload}) => {
       if(active && payload && payload.length){
       return (<div className="customTooltip">
@@ -72,10 +82,20 @@ const data =[
       }
     }
     
+/** Render of user activity data
+ *  @function Activity
+ *  @returns {JSX}
+ */
 export default function Activity() { 
+
 //Get ID from URL 
 const { id } = useParams()
-//Get data name activity by fetch to Getdata.jsx
+
+/**Get data activity by fetch to Getdata.jsx
+ * @function GetActivity
+ * @param {string} id (id of the user)
+ * @returns @param {object} activity (data user)
+ */
 const {activity} = GetActivity(id)
 console.log({activity})
 

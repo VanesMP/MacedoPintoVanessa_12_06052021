@@ -15,15 +15,28 @@ import {  RadialBarChart, RadialBar, ResponsiveContainer} from "recharts";
 //     }
 // }]
 
+/** Render user informations data
+ * @function Score
+ * @returns {JSX}
+ */
 export default function Score() {
     
  //Get ID from URL 
 const { id } = useParams()
-//Get data name infosUser by fetch to Getdata.jsx
+
+/**Get data name infosUser by fetch to Getdata.jsx
+ * @function GetInfos
+ * @param {string} id (id of the user)
+ * @returns @param {object} infosUser (data user)
+ */
 const {infosUser} = GetInfos(id)
 console.log({infosUser})
 
-//function pour récuperer le score des utilisateur nommé differemment dans la table.
+
+    /**Function to get the score of users, named differently in the table(todayScore || score)
+     * @function ScoreData
+     * @returns {string} (todayScore % || score %)
+     */
     const ScoreData = () => {
         if(infosUser?.data.todayScore === undefined || infosUser?.data.todayScore === null){
             return `${infosUser?.data?.score * 100} %`
@@ -31,7 +44,11 @@ console.log({infosUser})
             return `${infosUser?.data.todayScore * 100} %`
         }
     }
-//function pour afficher la barre de progression de 0 à 1
+    
+    /**Function to show RadialBar the progress (to 0 from 1)
+     * @function ShowScore
+     * @returns {array} (with max value (1) reference and the value score of the user)
+     */
     const ShowScore = () =>{
         if(infosUser?.data.todayScore === undefined || infosUser?.data.todayScore === null){
             return [{value:1, fill:'none'},

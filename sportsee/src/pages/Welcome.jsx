@@ -7,6 +7,10 @@ import karl from "../assets/Karl.png";
 import cecilia from "../assets/Cecilia.png";
 import empty from "../assets/newOne.png";
 
+/**Render of the home page for choose un user (and maybe after possibility to create a new user)
+ * @function Welcome
+ * @returns {JSX}
+ */
 export default function Welcome() {
 
   return(

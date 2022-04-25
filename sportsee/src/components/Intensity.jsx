@@ -37,21 +37,34 @@ import {GetPerformance} from '../Getdata'
 //             kind: 'intensity'
 //         }
 // ]
-
+  
+   /** Formatter ticks: format kind (french version) on PolarAngleAxis
+    *  @function transfomDay
+    *  @param {string} tickItem
+    *  @returns {string} days
+    */
   const tranformKind = (tickItem) => {
     const kinds = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Energie', 'Cardio']
     return kinds[tickItem -1]
   }
 
+/** Render user performance data
+ *  @function Intensity
+ *  @returns {JSX}
+ */  
 export default function Intensity() {
 
  //Get ID from URL 
 const { id } = useParams()
-//Get data name infosUser by fetch to Getdata.jsx
+
+/**Get data name performance by fetch to Getdata.jsx
+ * @function GetPerformance
+ * @param {string} id (id of the user)
+ * @returns @param {object} performance (data user)
+ */
 const {performance} = GetPerformance(id)
 console.log({performance})
-    
-    
+       
     return(
         <div className="containerIntensity">
             <div className='containerChart'>

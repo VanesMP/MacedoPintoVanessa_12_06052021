@@ -3,12 +3,10 @@ import { Link } from "react-router-dom"
 import "../styles/compenentStyle/NavHorizontal.css";
 import logo from "../assets/logo.png";
 
-/**
- * Render the horizontal navigation
+/** Render the horizontal navigation
  * @function NavHorizontal
  * @returns {JSX}
  */
-
 export default function NavHorizontal() {
 
     return(

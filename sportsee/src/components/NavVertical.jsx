@@ -4,6 +4,10 @@ import bike from "../assets/bike.png";
 import swim from "../assets/swim.png";
 import force from "../assets/force.png"
 
+/** Render the vertical navigation
+ * @function NavVertical
+ * @returns {JSX}
+ */
 export default function NavVertical() {
 
     return(

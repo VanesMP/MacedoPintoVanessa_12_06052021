@@ -10,7 +10,10 @@ import ColumnNutriments from '../components/ColumnNutriments';
 
 import '../styles/pageStyle/Dashboard.css';
 
-
+/** Render of user sports statistics analysis dashboard page
+ * @function Dashboard
+ * @returns {JSX}
+ */
 export default function Dashboard() {
 
     return ( 

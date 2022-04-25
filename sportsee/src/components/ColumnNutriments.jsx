@@ -7,12 +7,20 @@ import carbs from "../assets/carbs.png"
 import fat from "../assets/fat.png"
 import {GetInfos} from "../Getdata"
 
-
+/** Rendering user nutriments data
+ *  @function ColumnNutriments
+ *  @returns {JSX}
+ */
 export default function ColumnNutriments() {
 
 //Get ID from URL  
 const { id } = useParams()
-//Get data name infoUser by fetch to Getdata.jsx
+
+/**Get data name keydata by fetch to Getdata.jsx
+ * @function GetInfos
+ * @param {string} id (id of the user)
+ * @returns @param {object} infosUser (data user)
+ */
 const {infosUser} = GetInfos(id)
 console.log({infosUser})
 

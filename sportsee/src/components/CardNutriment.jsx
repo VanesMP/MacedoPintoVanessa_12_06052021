@@ -2,6 +2,14 @@
 import "../styles/compenentStyle/CardNutriment.css"
 import PropTypes from 'prop-types';
 
+
+/**Render of keydata (calorieCount, carbohydrateCount, lipidCount, proteinCount) on ColumnNutriments.jsx
+ * @function CardNutriment
+ * @param {any} icon (icon of the keydata value) 
+ * @param {number} dataValue (data of the keydata) 
+ * @param {string} text (name of the keydata) 
+ * @returns {JSX}
+ */
 export default function CardNutriment({icon, dataValue, text}) {
 
     return(
@@ -19,6 +27,6 @@ export default function CardNutriment({icon, dataValue, text}) {
 
 CardNutriment.propTypes = {
     icon: PropTypes.any,
-    dataValue: PropTypes.string,
+    dataValue: PropTypes.number,
     text: PropTypes.string
 }

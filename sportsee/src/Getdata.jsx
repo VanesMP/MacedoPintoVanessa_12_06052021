@@ -7,6 +7,11 @@ __useState  permettra de stocker le retour de l'API dans le  state  .
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
+/**Function to fetch data
+ * @function GetInfos (using hook)
+ * @param {string} id (of the user)
+ * @returns {object} data
+ */
 export const GetInfos = (id) => {
   const [infosUser, setInfosUser] = useState(null);
 
@@ -22,6 +27,11 @@ console.log({infosUser})
 return { infosUser:infosUser }
 }
 
+/**Function to fetch data
+ * @function Getsession (using hook)
+ * @param {string} id (of the user)
+ * @returns {object} data
+ */
 export const GetSession = (id) => {
 
   const [session, setSession] = useState(null);
@@ -38,6 +48,11 @@ console.log({session})
 return { session:session }
 }
 
+/**Function to fetch data
+ * @function GetActivity (using hook)
+ * @param {string} id (of the user)
+ * @returns {object} data
+ */
 export const GetActivity = (id) => {
 const [activity, setActivity] = useState(null);
 
@@ -53,6 +68,11 @@ console.log({activity})
 return { activity:activity }
 }
 
+/**Function to fetch data
+ * @function GetPerformance (using hook)
+ * @param {string} id (of the user)
+ * @returns {object} data
+ */
 export const GetPerformance = (id) => {
 const [performance, setPerformance] = useState(null);
 
