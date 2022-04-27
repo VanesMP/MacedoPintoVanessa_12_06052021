@@ -34,7 +34,7 @@ This repo contains all the source code to install and lauch the project
 - [ ] Type Y
 - [ ] The application run on http://localhost:3001
 
-## Endpoints
+## 4. Endpoints
 ### 4.1 Possible endpoints
 This project includes four endpoints that you will be able to use:
 
