@@ -1,4 +1,4 @@
-# Openclassrooms's project 12: Build an analytics dashboard with React 
+# Project 12 - Build an analytics dashboard with React 
 
 ## 1. General information
 This repo contains all the source code to install and lauch the project
@@ -6,33 +6,33 @@ This repo contains all the source code to install and lauch the project
 ## 2. Getting started
 
 ### Prerequisite
-- NodeJS Version 14.18.0
-- Yarn Version 1.22.18
-- Visual Studio Code or another IDE
+- [NodeJS](https://nodejs.org/en/) Version 14.18.0
+- [Yarn](https://yarnpkg.com/getting-started/install) Version 1.22.18
+- [Visual Studio Code](https://code.visualstudio.com/) or another IDE
 
 ### Dependencies
-- React Version 17.0.2
+- [React](https://fr.reactjs.org/) Version 17.0.2
 - React-dom Version 17.0.2
 - React-router-dom Version 6.2.2
-- Recharts Version 2.1.9
+- [Recharts](https://recharts.org/en-US/) Version 2.1.9
 
 ## 3. Launching the project
 
 ### 3.1 Backend Api
 - [ ] Fork the repository of backend api : [P9-front-end-dashboard](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
-- [ ] Clone it on your computer : git clone
-- [ ] Install the dependencies: yarn install
-- [ ] Run the micro-api on port 3000 by default : yarn start
+- [ ] Clone it on your computer : `git clone`
+- [ ] Install the dependencies: `yarn install`
+- [ ] Run the micro-api on port 3000 by default : `yarn start`
 
-:sparkles: Magic happens on port 3000 :sparkles:
+:sparkles: Magic happens on port **3000** :sparkles:
 
 ### 3.2 Front-end app
 - [ ] Clone this repository on your computer : [Sportsee App](https://github.com/VanesMP/MacedoPintoVanessa_12_06052021)
-- [ ] Install the dependencies : npm install
-- [ ] Run the Backend api on port 3000 by default : npm start
+- [ ] Install the dependencies : `npm install`
+- [ ] Run the Backend api on port 3000 by default : `npm start`
 - [ ] You will see this message : Something is already running on your port 3000. Would you like to run the app on another port instead (Y/N)
-- [ ] Type Y
-- [ ] The application run on port 3001
+- [ ] Type: `Y` 
+- [ ] The application run on port **3001**
 
 ## 4. Endpoints
 ### 4.1 Possible endpoints
