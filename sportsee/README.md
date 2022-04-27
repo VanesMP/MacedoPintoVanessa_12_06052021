@@ -19,7 +19,7 @@ This repo contains all the source code to install and lauch the project
 ## 3. Launching the project
 
 ### 3.1 Backend Api
-- [ ] Fork the repository of backend api : https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard
+- [ ] Fork the repository of backend api : [P9-front-end-dashboard](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
 - [ ] Clone it on your computer : git clone
 - [ ] Install the dependencies: yarn install
 - [ ] Run the micro-api on port 3000 by default : yarn start
@@ -27,12 +27,12 @@ This repo contains all the source code to install and lauch the project
 :sparkles: Magic happens on port 3000 :sparkles:
 
 ### 3.2 Front-end app
-- [ ] Clone this repository on your computer : https://github.com/VanesMP/MacedoPintoVanessa_12_06052021
+- [ ] Clone this repository on your computer : [Sportsee App](https://github.com/VanesMP/MacedoPintoVanessa_12_06052021)
 - [ ] Install the dependencies : npm install
 - [ ] Run the Backend api on port 3000 by default : npm start
 - [ ] You will see this message : Something is already running on your port 3000. Would you like to run the app on another port instead (Y/N)
 - [ ] Type Y
-- [ ] The application run on http://localhost:3001
+- [ ] The application run on port 3001
 
 ## 4. Endpoints
 ### 4.1 Possible endpoints
