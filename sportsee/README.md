@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Project 12 - Build an analytics dashboard with React 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. General information
+This repo contains all the source code to install and lauch the project
 
-## Available Scripts
+## 2. Getting started
 
-In the project directory, you can run:
+### Prerequisite
+- [NodeJS](https://nodejs.org/en/) Version 14.18.0
+- [Yarn](https://yarnpkg.com/getting-started/install) Version 1.22.18
+- [Visual Studio Code](https://code.visualstudio.com/) or another IDE
 
-### `npm start`
+### Dependencies
+- [React](https://fr.reactjs.org/) Version 17.0.2
+- React-dom Version 17.0.2
+- React-router-dom Version 6.2.2
+- [Recharts](https://recharts.org/en-US/) Version 2.1.9
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 3. Launching the project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 3.1 Backend Api
+- [ ] Fork the repository of backend api : [P9-front-end-dashboard](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
+- [ ] Clone it on your computer : `git clone`
+- [ ] Install the dependencies: `yarn install`
+- [ ] Run the micro-api on port 3000 by default : `yarn start`
 
-### `npm test`
+:sparkles: Magic happens on port **3000** :sparkles:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3.2 Front-end app
+- [ ] Clone this repository on your computer : [Sportsee App](https://github.com/VanesMP/MacedoPintoVanessa_12_06052021)
+- [ ] Install the dependencies : `npm install`
+- [ ] Run the Backend api on port 3000 by default : `npm start`
+- [ ] You will see this message : Something is already running on your port 3000. Would you like to run the app on another port instead (Y/N)
+- [ ] Type: `Y` 
+- [ ] The application run on port **3001**
 
-### `npm run build`
+## 4. Endpoints
+### 4.1 Possible endpoints
+This project includes four endpoints that you will be able to use:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- http://localhost:3000/user/${userId} - retrieves information from a user. This first endpoint includes the user id, user information (first name, last name and age), the current day's score (todayScore) and key data (calorie, macronutrient, etc.).
+- http://localhost:3000/user/${userId}/activity - retrieves a user's activity day by day with kilograms and calories.
+- http://localhost:3000/user/${userId}/average-sessions - retrieves the average sessions of a user per day. The week starts on Monday.
+- http://localhost:3000/user/${userId}/performance - retrieves a user's performance (energy, endurance, etc.).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 4.2 Examples of queries
+- http://localhost:3000/user/12/performance - Retrieves the performance of the user with id 12
+- http://localhost:3000/user/18 - Retrieves user 18's main information.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+:warning: **Warning, currently only two users have been mocked. They have userId 12 and 18 respectively.**
