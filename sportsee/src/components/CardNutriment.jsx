@@ -27,6 +27,15 @@ export default function CardNutriment({icon, dataValue, text}) {
 
 CardNutriment.propTypes = {
     icon: PropTypes.any,
-    dataValue: PropTypes.number,
+    dataValue: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+    ]),
     text: PropTypes.string
 }
+
+/**size: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),**/
+  
