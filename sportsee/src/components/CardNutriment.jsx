@@ -33,9 +33,3 @@ CardNutriment.propTypes = {
     ]),
     text: PropTypes.string
 }
-
-/**size: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ]),**/
-  
