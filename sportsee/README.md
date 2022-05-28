@@ -18,13 +18,11 @@ This repo contains all the source code to install and lauch the project
 - [Recharts](https://recharts.org/en-US/) Version 2.1.9
 
 ## 3. Launching the project (with Docker)
-
 ### 3.1 Backend Api
 - [ ] Fork the repository of backend api : [P9-front-end-dashboard](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
 - [ ] Clone it on your computer : `git clone`
 - [ ] Install the dependencies: `yarn install`
 
-### 3.2 Starting the projet
 - [ ] The `docker image build --no-cache -t micro-api .` command will allow you to build your image
 - [ ] The `docker container run --name micro-api -p 3000:3000 -dt micro-api` yarn command will allow you to
       create your Docker container and run your image on port 3000
@@ -34,7 +32,7 @@ This repo contains all the source code to install and lauch the project
 
 :sparkles: Magic happens on port **3000** :sparkles:
 
-### 3.4 Front-end app
+### 3.2 Front-end app
 - [ ] Clone this repository on your computer : [Sportsee App](https://github.com/VanesMP/MacedoPintoVanessa_12_06052021)
 - [ ] Install the dependencies : `npm install`
 - [ ] Run the Backend api on port 3000 by default : `npm start`
