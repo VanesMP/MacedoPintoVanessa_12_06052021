@@ -9,6 +9,7 @@ This repo contains all the source code to install and lauch the project
 - [NodeJS](https://nodejs.org/en/) Version 14.18.0
 - [Yarn](https://yarnpkg.com/getting-started/install) Version 1.22.18
 - [Visual Studio Code](https://code.visualstudio.com/) or another IDE
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
 ### Dependencies
 - [React](https://fr.reactjs.org/) Version 17.0.2
@@ -16,13 +17,18 @@ This repo contains all the source code to install and lauch the project
 - React-router-dom Version 6.2.2
 - [Recharts](https://recharts.org/en-US/) Version 2.1.9
 
-## 3. Launching the project
-
+## 3. Launching the project (with Docker)
 ### 3.1 Backend Api
 - [ ] Fork the repository of backend api : [P9-front-end-dashboard](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
 - [ ] Clone it on your computer : `git clone`
 - [ ] Install the dependencies: `yarn install`
-- [ ] Run the micro-api on port 3000 by default : `yarn start`
+
+- [ ] The `docker image build --no-cache -t micro-api .` command will allow you to build your image
+- [ ] The `docker container run --name micro-api -p 3000:3000 -dt micro-api` yarn command will allow you to
+      create your Docker container and run your image on port 3000
+- [ ] The `docker container stop micro-api` command will allow you to stop your micro-api
+- [ ] The `docker container rm micro-api` command will allow you to delete your micro-api container
+- [ ] Finally, if you have VsCode, you can easily launch your project in a docker environment with `npm start` command
 
 :sparkles: Magic happens on port **3000** :sparkles:
 
