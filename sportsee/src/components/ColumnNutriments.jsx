@@ -19,10 +19,9 @@ const { id } = useParams()
 /**Get data name keydata by fetch to Getdata.jsx
  * @function GetInfos
  * @param {string} id (id of the user)
- * @returns @param {object} infosUser (data user)
+ * @returns @param {object} infosUser (data nutriment user)
  */
 const {infosUser} = GetInfos(id)
-console.log({infosUser})
 
     return(
         <div className="containerNutriments">

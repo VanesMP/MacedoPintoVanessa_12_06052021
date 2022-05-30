@@ -1,7 +1,5 @@
-
 import "../styles/compenentStyle/CardNutriment.css"
 import PropTypes from 'prop-types';
-
 
 /**Render of keydata (calorieCount, carbohydrateCount, lipidCount, proteinCount) on ColumnNutriments.jsx
  * @function CardNutriment

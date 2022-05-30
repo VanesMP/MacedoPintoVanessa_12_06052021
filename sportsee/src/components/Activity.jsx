@@ -1,18 +1,9 @@
 import React from "react";
 import { useParams } from "react-router";
 import PropTypes from 'prop-types';
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip
-} from "recharts";
-
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import "../styles/compenentStyle/Activity.css"
 import {GetActivity} from "../Getdata";
-
 
 /*Mock data
 const data =[
@@ -94,12 +85,10 @@ const { id } = useParams()
 /**Get data activity by fetch to Getdata.jsx
  * @function GetActivity
  * @param {string} id (id of the user)
- * @returns @param {object} activity (data user)
+ * @returns @param {object} activity (data activity user)
  */
 const {activity} = GetActivity(id)
-console.log({activity})
 
- 
     return(
         <div className="containerActivity">
           <div className="containerTitle">

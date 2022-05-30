@@ -2,15 +2,7 @@ import { useParams } from "react-router";
 import PropTypes from 'prop-types';
 import "../styles/compenentStyle/Duration.css"
 import {GetSession} from "../Getdata";
-
-import { 
-    LineChart, 
-    Tooltip,
-    Line, 
-    XAxis,
-    ResponsiveContainer, 
-    YAxis,
-} from 'recharts';
+import { LineChart, Tooltip, Line, XAxis, ResponsiveContainer, YAxis } from 'recharts';
 
     // Data before the call api, using for implementation
     // const data = [
@@ -44,29 +36,29 @@ import {
     //     }
     // ]
 
-   /** Formatter ticks: format day on x line
-    *  @function transfomDay
-    *  @param {string} tickItem
-    *  @returns {string} days
-    */
-      const tranformDay = (tickItem) => {
-        const days =['L', 'M', 'M', 'J', 'V', 'S', 'D']
-       return(days[tickItem - 1])
-      }
-      
-   /**Custom Tooltip to display (min) on the hover on the LineChart
-    * @function CustomTooltip
-    * @param {bool} active (initial value false, if set true the tooltip is displayed)
-    * @param {array} payload (data of the content to be displayed in the tooltip)
-    * @returns {JSX}
-    */
-       const CustomTooltipLine = ({active, payload}) => {
-         if (active && payload && payload.length){
-        return <div className="customTooltipline">{`${payload[0].value} min`}</div>
-        } else {
-        return null
-        }
-      }
+/** Formatter ticks: format day on x line
+*  @function transfomDay
+*  @param {string} tickItem
+*  @returns {string} days
+*/
+  const tranformDay = (tickItem) => {
+    const days =['L', 'M', 'M', 'J', 'V', 'S', 'D']
+    return(days[tickItem - 1])
+  }
+  
+/**Custom Tooltip to display (min) on the hover on the LineChart
+* @function CustomTooltip
+* @param {bool} active (initial value false, if set true the tooltip is displayed)
+* @param {array} payload (data of the content to be displayed in the tooltip)
+* @returns {JSX}
+*/
+    const CustomTooltipLine = ({active, payload}) => {
+      if (active && payload && payload.length){
+    return <div className="customTooltipline">{`${payload[0].value} min`}</div>
+    } else {
+    return null
+    }
+  }
 
 /** Rendering user session data
  *  @function Duration
@@ -74,16 +66,15 @@ import {
  */
 export default function Duration() {
 
- //Get ID from URL 
-const { id } = useParams()
+  //Get ID from URL 
+  const { id } = useParams()
 
-/**Get data name session by fetch to Getdata.jsx
- * @function GetSession
- * @param {string} id (id of the user)
- * @returns @param {object} session (data user: day, seesionLength)
- */
-const {session} = GetSession(id)
-console.log({session})
+  /**Get data name session by fetch to Getdata.jsx
+   * @function GetSession
+   * @param {string} id (id of the user)
+   * @returns @param {object} session (data user: day, seesionLength)
+   */
+  const {session} = GetSession(id)
 
     return(
         <div className="containerDuration">
@@ -105,6 +96,6 @@ CustomTooltipLine.propTypes ={
     payload: PropTypes.array
   }
 
-  tranformDay.propTypes ={
-    days: PropTypes.string
-  }
+tranformDay.propTypes ={
+  days: PropTypes.string
+}

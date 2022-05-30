@@ -1,8 +1,7 @@
 import { useParams } from "react-router";
 import "../styles/compenentStyle/Score.css"
-import {GetInfos} from "../Getdata";
-
-import {  RadialBarChart, RadialBar, ResponsiveContainer} from "recharts";
+import { GetInfos } from "../Getdata";
+import {  RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 
 //Mock data
 // const data =[{
@@ -21,17 +20,15 @@ import {  RadialBarChart, RadialBar, ResponsiveContainer} from "recharts";
  */
 export default function Score() {
     
- //Get ID from URL 
-const { id } = useParams()
+    //Get ID from URL 
+    const { id } = useParams()
 
-/**Get data name infosUser by fetch to Getdata.jsx
- * @function GetInfos
- * @param {string} id (id of the user)
- * @returns @param {object} infosUser (data user)
- */
-const {infosUser} = GetInfos(id)
-console.log({infosUser})
-
+    /**Get data name infosUser by fetch to Getdata.jsx
+     * @function GetInfos
+     * @param {string} id (id of the user)
+     * @returns @param {object} infosUser (data user)
+     */
+    const {infosUser} = GetInfos(id)
 
     /**Function to get the score of users, named differently in the table(todayScore || score)
      * @function ScoreData
@@ -59,30 +56,29 @@ console.log({infosUser})
         }
     }
     let radialScore = ShowScore()
-    console.log(radialScore)
     
-    return(
-        <div className="containerScore">
-            <h1 className="titleScore">Score</h1>
-            <h2 className="objectif"> 
-               <div className="scoreValue" ><span className="score"><ScoreData/></span><br/>{`de votre`}<br/>{`objectif`} </div>
-            </h2>
-            <div className="chart">
-            <ResponsiveContainer width="100%" height="75%" >
-            <RadialBarChart
-            cx='50%'
-            cy='50%'
-            innerRadius={70}
-            outerRadius={100}
-            barSize={10}
-            startAngle={90}
-            endAngle={450}
-            data={radialScore}>
-            <RadialBar cornerRadius={50}  dataKey='value' />
-            </RadialBarChart>
-         </ResponsiveContainer>
-        </div>
-        </div>
-    )
+        return(
+            <div className="containerScore">
+                <h1 className="titleScore">Score</h1>
+                <h2 className="objectif"> 
+                <div className="scoreValue" ><span className="score"><ScoreData/></span><br/>{`de votre`}<br/>{`objectif`} </div>
+                </h2>
+                <div className="chart">
+                <ResponsiveContainer width="100%" height="75%" >
+                <RadialBarChart
+                cx='50%'
+                cy='50%'
+                innerRadius={70}
+                outerRadius={100}
+                barSize={10}
+                startAngle={90}
+                endAngle={450}
+                data={radialScore}>
+                <RadialBar cornerRadius={50}  dataKey='value' />
+                </RadialBarChart>
+            </ResponsiveContainer>
+            </div>
+            </div>
+        )
 }
 

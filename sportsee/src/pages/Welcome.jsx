@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import "../styles/pageStyle/Welcome.css";
-
 import NavHorizontal from "../components/NavHorizontal";
 import NavVertical from "../components/NavVertical";
 import karl from "../assets/Karl.png";

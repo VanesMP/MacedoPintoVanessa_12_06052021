@@ -1,12 +1,6 @@
 import { useParams } from "react-router";
 import PropTypes from 'prop-types';
-import { Radar,
-        RadarChart, 
-        PolarGrid, 
-        PolarAngleAxis, 
-        PolarRadiusAxis, 
-        ResponsiveContainer } from 'recharts'
-
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts'
 import "../styles/compenentStyle/Intensity.css"
 import {GetPerformance} from '../Getdata'
 
@@ -38,15 +32,15 @@ import {GetPerformance} from '../Getdata'
 //         }
 // ]
   
-   /** Formatter ticks: format kind (french version) on PolarAngleAxis
-    *  @function transfomDay
-    *  @param {string} tickItem
-    *  @returns {string} days
-    */
-  const tranformKind = (tickItem) => {
-    const kinds = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Energie', 'Cardio']
-    return kinds[tickItem -1]
-  }
+/** Formatter ticks: format kind (french version) on PolarAngleAxis
+*  @function transfomDay
+*  @param {string} tickItem
+*  @returns {string} days
+*/
+const tranformKind = (tickItem) => {
+  const kinds = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Energie', 'Cardio']
+  return kinds[tickItem -1]
+}
 
 /** Render user performance data
  *  @function Intensity
@@ -54,31 +48,30 @@ import {GetPerformance} from '../Getdata'
  */  
 export default function Intensity() {
 
- //Get ID from URL 
-const { id } = useParams()
+    //Get ID from URL 
+    const { id } = useParams()
 
-/**Get data name performance by fetch to Getdata.jsx
- * @function GetPerformance
- * @param {string} id (id of the user)
- * @returns @param {object} performance (data user)
- */
-const {performance} = GetPerformance(id)
-console.log({performance})
-       
-    return(
-        <div className="containerIntensity">
-            <div className='containerChart'>
-    <ResponsiveContainer width="100%" height="90%" >
-    <RadarChart outerRadius="80%" data={performance?.data?.data}>
-    <PolarGrid />
-    <PolarAngleAxis dataKey='kind' tickFormatter={tranformKind} tickLine={false}  stroke="#ffffff" />
-    <PolarRadiusAxis tickCount={6} axisLine={false}  tick={false} dataKey='value'  domain={[0, 250]}/>
-    <Radar dataKey="value" fill="#FF0101" fillOpacity={0.6} />
-    </RadarChart>
-    </ResponsiveContainer>
+    /**Get data name performance by fetch to Getdata.jsx
+     * @function GetPerformance
+     * @param {string} id (id of the user)
+     * @returns @param {object} performance (data user)
+     */
+    const {performance} = GetPerformance(id)
+        
+        return(
+            <div className="containerIntensity">
+                <div className='containerChart'>
+        <ResponsiveContainer width="100%" height="90%" >
+        <RadarChart outerRadius="80%" data={performance?.data?.data}>
+        <PolarGrid />
+        <PolarAngleAxis dataKey='kind' tickFormatter={tranformKind} tickLine={false}  stroke="#ffffff" />
+        <PolarRadiusAxis tickCount={6} axisLine={false}  tick={false} dataKey='value'  domain={[0, 250]}/>
+        <Radar dataKey="value" fill="#FF0101" fillOpacity={0.6} />
+        </RadarChart>
+        </ResponsiveContainer>
+                </div>
             </div>
-        </div>
-    )
+        )
 }
 
  tranformKind.propTypes ={
