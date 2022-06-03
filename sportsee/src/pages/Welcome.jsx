@@ -4,7 +4,6 @@ import NavHorizontal from "../components/NavHorizontal";
 import NavVertical from "../components/NavVertical";
 import karl from "../assets/Karl.png";
 import cecilia from "../assets/Cecilia.png";
-import empty from "../assets/newOne.png";
 
 /**Render of the home page for choose un user (and maybe after possibility to create a new user)
  * @function Welcome
@@ -45,9 +44,6 @@ export default function Welcome() {
         </div>
         </div>
             </Link>
-        <div className="card empty">
-        <img src={empty} alt="identity pictures" className="identity"/>
-        </div>
         </div>
         </div>
         </div>
